@@ -1,0 +1,108 @@
+@use '../../../styles/color' as color;
+@use '../../../styles/typography' as typo;
+@use '../../../styles/layout' as layout;
+
+.card {
+    background: color.$bg-white;
+    border-radius: 16px;
+    overflow: hidden;
+    @include layout.card-shadow;
+    transition: box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+
+    &:hover {
+        @include layout.card-shadow-hover;
+    }
+}
+
+.imageWrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+    background: color.$bg-gray;
+}
+
+.image {
+    object-fit: contain;
+    padding: 16px;
+}
+
+.discountBadge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: color.$accent-red;
+    color: color.$bg-white;
+    font-size: typo.$font-size-xs;
+    font-weight: typo.$font-weight-semibold;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.newBadge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: color.$neutral-yellow-color;
+    color: color.$text-primary;
+    font-size: typo.$font-size-xs;
+    font-weight: typo.$font-weight-semibold;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.content {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+}
+
+.title {
+    font-size: typo.$font-size-base;
+    font-weight: typo.$font-weight-semibold;
+    line-height: typo.$line-height-tight;
+    margin: 0;
+    cursor: pointer;
+    color: color.$text-primary;
+
+    &:hover {
+        color: color.$neutral-yellow-gray-color;
+    }
+}
+
+.priceRow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.price {
+    font-size: typo.$font-size-xl;
+    font-weight: typo.$font-weight-bold;
+    color: color.$text-primary;
+}
+
+.priceDiscount {
+    font-size: typo.$font-size-xl;
+    font-weight: typo.$font-weight-bold;
+    color: color.$accent-red;
+}
+
+.priceOld {
+    font-size: typo.$font-size-base;
+    font-weight: typo.$font-weight-normal;
+    color: color.$text-muted;
+    text-decoration: line-through;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+}
