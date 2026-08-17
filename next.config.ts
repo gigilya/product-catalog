@@ -11,14 +11,20 @@ const nextConfig: NextConfig = {
         ];
     },
     images: {
-        remotePatterns: [
-            {
-                protocol: 'https',
-                hostname: 'ohotaktiv.ru',
-                port: '',
-                pathname: '/upload/**',
-            },
-        ],
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: 'ohotaktiv.ru',
+          port: '',
+          pathname: '/upload/**',
+        },
+        {
+          protocol: 'https',
+          hostname: 'fohotaktiv.ru',
+          port: '',
+          pathname: '/upload/**',
+        },
+      ],
     },
 };
 
