@@ -1,0 +1,91 @@
+@use '../../../styles/color' as color;
+@use '../../../styles/typography' as typo;
+
+.header {
+    background: color.$text-primary;
+    color: color.$bg-white;
+    padding: 0 16px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+}
+
+.logo {
+    font-size: typo.$font-size-2xl;
+    font-weight: typo.$font-weight-bold;
+    color: color.$neutral-yellow-color;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+
+    a {
+        color: color.$bg-white;
+        font-size: typo.$font-size-base;
+        font-weight: typo.$font-weight-semibold;
+        position: relative;
+        padding: 8px 0;
+        display: flex;
+        align-items: center;
+
+        &:hover {
+            color: color.$neutral-yellow-color;
+        }
+    }
+}
+
+.active {
+    color: color.$neutral-yellow-color !important;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: color.$neutral-yellow-color;
+    }
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 18px;
+    height: 18px;
+    background: color.$neutral-yellow-color;
+    color: color.$text-primary;
+    font-size: typo.$font-size-xs;
+    font-weight: typo.$font-weight-bold;
+    border-radius: 9px;
+    padding: 0 5px;
+    margin-left: 6px;
+}
+
+@media (max-width: 640px) {
+    .logo {
+        font-size: typo.$font-size-xl;
+    }
+
+    .menu {
+        gap: 16px;
+
+        a {
+            font-size: typo.$font-size-sm;
+        }
+    }
+}
