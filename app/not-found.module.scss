@@ -1,0 +1,33 @@
+@use '../src/styles/color' as color;
+@use '../src/styles/typography' as typo;
+
+.wrap {
+    text-align: center;
+    padding: 80px 16px;
+
+    h1 {
+        font-size: typo.$font-size-5xl;
+        font-weight: typo.$font-weight-bold;
+        margin: 0 0 16px;
+        color: color.$text-primary;
+    }
+
+    p {
+        font-size: typo.$font-size-lg;
+        color: color.$text-secondary;
+        margin-bottom: 24px;
+    }
+
+    a {
+        display: inline-block;
+        padding: 12px 32px;
+        background: color.$neutral-yellow-color;
+        color: color.$text-primary;
+        font-weight: typo.$font-weight-semibold;
+        border-radius: 30px;
+
+        &:hover {
+            background: color.$neutral-yellow-gray-color;
+        }
+    }
+}

@@ -1,3 +1,5 @@
-export default function Home() {
-    return <p>Hello World</p>;
+import { ProductList } from '@/src/widgets/ProductList/ui/ProductList';
+
+export default function HomePage() {
+    return <ProductList />;
 }
