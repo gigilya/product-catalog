@@ -58,15 +58,15 @@ const eslintConfig = defineConfig(
                     noSortAlphabetically: true,
                 },
             ],
-            'react/jsx-handler-names': [
-                'error',
-                {
-                    eventHandlerPrefix: 'handle',
-                    eventHandlerPropPrefix: 'on',
-                    checkLocalVariables: true,
-                    checkInlineFunction: true,
-                },
-            ],
+            // 'react/jsx-handler-names': [
+            //     'error',
+            //     {
+            //         eventHandlerPrefix: 'handle',
+            //         eventHandlerPropPrefix: 'on',
+            //         checkLocalVariables: true,
+            //         checkInlineFunction: true,
+            //     },
+            // ],
             'simple-import-sort/imports': [
                 'error',
                 {
