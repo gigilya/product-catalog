@@ -14,15 +14,7 @@ const nextConfig: NextConfig = {
       remotePatterns: [
         {
           protocol: 'https',
-          hostname: 'ohotaktiv.ru',
-          port: '',
-          pathname: '/upload/**',
-        },
-        {
-          protocol: 'https',
-          hostname: 'fohotaktiv.ru',
-          port: '',
-          pathname: '/upload/**',
+          hostname: '**',
         },
       ],
     },
