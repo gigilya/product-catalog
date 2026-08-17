@@ -1,0 +1,18 @@
+@use '../../../styles/color' as color;
+@use '../../../styles/typography' as typo;
+
+.input {
+    padding: 10px 16px;
+    border: 1px solid color.$border-color;
+    border-radius: 8px;
+    font-size: typo.$font-size-base;
+    font-family: typo.$font-family-base;
+    background: color.$bg-white;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+
+    &:focus {
+        border-color: color.$neutral-yellow-color;
+    }
+}
