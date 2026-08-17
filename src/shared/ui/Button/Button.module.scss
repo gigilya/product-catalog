@@ -1,0 +1,51 @@
+@use '../../../styles/color' as color;
+@use '../../../styles/typography' as typo;
+
+.button {
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: none;
+    font-size: typo.$font-size-lg;
+    font-weight: typo.$font-weight-semibold;
+    padding: 10px 30px;
+    border-radius: 30px;
+    font-family: typo.$font-family-base;
+    transition:
+        background-color 0.2s,
+        opacity 0.2s;
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}
+
+.primary {
+    background-color: color.$neutral-yellow-color;
+    color: color.$text-primary;
+
+    &:hover:not(:disabled) {
+        background-color: color.$neutral-yellow-gray-color;
+    }
+}
+
+.secondary {
+    background: color.$neutral-light-white-color;
+    color: color.$text-primary;
+
+    &:hover:not(:disabled) {
+        background-color: color.$neutral-light-gray-color;
+    }
+}
+
+.large {
+    font-size: typo.$font-size-xl;
+    padding: 20px 50px;
+}
+
+.small {
+    padding: 10px 20px;
+    font-size: typo.$font-size-sm;
+}
