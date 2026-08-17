@@ -1,0 +1,131 @@
+@use '../../../styles/color' as color;
+@use '../../../styles/typography' as typo;
+@use '../../../styles/layout' as layout;
+
+.container {
+    @include layout.container;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: typo.$font-size-sm;
+    cursor: pointer;
+
+    input {
+        width: 18px;
+        height: 18px;
+        accent-color: color.$neutral-yellow-color;
+    }
+}
+
+.priceInputs {
+    display: flex;
+    gap: 8px;
+    width: 240px;
+
+    input {
+        flex: 1;
+    }
+}
+
+.select {
+    padding: 10px 16px;
+    border: 1px solid color.$border-color;
+    border-radius: 8px;
+    font-size: typo.$font-size-base;
+    font-family: typo.$font-family-base;
+    background: color.$bg-white;
+    cursor: pointer;
+}
+
+.grid {
+    @include layout.grid-products;
+}
+
+.empty {
+    text-align: center;
+    font-size: typo.$font-size-lg;
+    color: color.$text-secondary;
+    padding: 48px 0;
+}
+
+.error {
+    text-align: center;
+    padding: 48px 0;
+
+    p {
+        color: color.$accent-red;
+        margin-bottom: 16px;
+    }
+}
+
+.skeletonGrid {
+    @include layout.grid-products;
+}
+
+.skeletonCard {
+    background: color.$bg-white;
+    border-radius: 16px;
+    overflow: hidden;
+    @include layout.card-shadow;
+    padding: 16px;
+}
+
+.skeletonImage {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.skeletonText {
+    height: 20px;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+.skeletonTextShort {
+    height: 20px;
+    width: 60%;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 4px;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .priceInputs {
+        width: 100%;
+    }
+}
